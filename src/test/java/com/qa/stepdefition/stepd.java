@@ -33,8 +33,8 @@ public class stepd extends base{
 
 	@When("user enter username and pass")
 	public void user_enter_username_and_pass() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='userid']")));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='userid']")));
 		q=new qa(driver);
 		q.user();
 	   q.pass();

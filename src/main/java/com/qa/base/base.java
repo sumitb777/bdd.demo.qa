@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -14,8 +15,10 @@ public static WebDriver driver;
 		
 		String browser="chrome";
 		if(browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
+			driver=new ChromeDriver(options);
 			
 		}else if(browser.equalsIgnoreCase("edge")){
 			WebDriverManager.edgedriver().setup();
